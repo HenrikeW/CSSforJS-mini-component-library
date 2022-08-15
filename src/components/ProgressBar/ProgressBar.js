@@ -33,9 +33,20 @@ const ProgressBar = ({ value, size }) => {
   `;
 
   return (
-    <Container>
-      <Bar></Bar>
-    </Container>
+    <>
+      <VisuallyHidden>
+        <label htmlFor="loadingBar">Loading</label>
+      </VisuallyHidden>
+      <Container
+        role="progressbar"
+        id="loadingBar"
+        aria-valuenow={value}
+        aria-valuemin={0}
+        aria-valuemax={100}
+      >
+        <Bar></Bar>
+      </Container>
+    </>
   );
 };
 
