@@ -9,16 +9,14 @@ const ProgressBar = ({ value, size }) => {
   const height = {
     small: "8px",
     medium: "12px",
-    large: "24px",
+    large: "16px",
   };
 
   const Container = styled.article`
     --height: ${height[size]};
 
-    width: 370px;
-    height: var(--height);
     background-color: ${COLORS.transparentGray15};
-    box-shadow: inset 0px 2px 4px rgba(128, 128, 128, 0.35);
+    box-shadow: inset 0px 2px 4px ${COLORS.transparentGray35};
     border-radius: ${size === "large" ? "8px" : "4px"};
     overflow: hidden;
     padding: ${size === "large" ? "4px" : 0};
@@ -26,10 +24,15 @@ const ProgressBar = ({ value, size }) => {
 
   const Bar = styled.div`
     width: ${value}%;
-    height: 100%;
+    height: var(--height);
     background-color: ${COLORS.primary};
-    border: ${size === "large" ? "4px solid transparent" : "none"};
+    border-radius: 4px;
+  `;
+
+  const BarWrapper = styled.div`
     border-radius: 4px 0px 0px 4px;
+    overflow: hidden;
+    height: 100%;
   `;
 
   return (
@@ -44,7 +47,9 @@ const ProgressBar = ({ value, size }) => {
         aria-valuemin={0}
         aria-valuemax={100}
       >
-        <Bar></Bar>
+        <BarWrapper>
+          <Bar></Bar>
+        </BarWrapper>
       </Container>
     </>
   );
