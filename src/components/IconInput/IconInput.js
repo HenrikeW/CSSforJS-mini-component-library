@@ -16,8 +16,8 @@ const IconInput = ({ label, icon, width = 250, size, placeholder }) => {
     color: inherit;
     font-weight: inherit;
     font-size: inherit;
-    padding-left: ${size === "small" ? "24px" : "36px"};
-    height: ${size === "small" ? "16px" : "24px"};
+    padding-left: ${size === "small" ? `${24 / 16}rem` : `${36 / 16}rem`};
+    height: ${size === "small" ? "1rem" : "1.5rem"};
     width: 100%;
 
     &:focus {
@@ -41,7 +41,7 @@ const IconInput = ({ label, icon, width = 250, size, placeholder }) => {
     position: relative;
     color: ${COLORS.gray700};
     font-weight: 700;
-    font-size: ${size === "small" ? "14px" : "18px"};
+    font-size: ${size === "small" ? `${14 / 16}rem` : `${18 / 16}rem`};
     padding-bottom: 4px;
   `;
 
