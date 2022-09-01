@@ -21,7 +21,7 @@ const IconInput = ({ label, icon, width = 250, size, placeholder }) => {
     width: 100%;
 
     &:focus {
-      outline-offset: 4px;
+      outline-offset: 6px;
     }
 
     &:placeholder {
